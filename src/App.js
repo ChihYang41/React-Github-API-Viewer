@@ -17,7 +17,7 @@ class App extends Component {
       searchText: "",
       userData: []
     };
-    
+
     this.handleGetData = debounce(this.handleGetData, 100)
     this.handleScroll = debounce(this.handleScroll, 100)
     this.page = 1;
@@ -35,7 +35,7 @@ class App extends Component {
     const { searchText, userData } = this.state;
 
     fetch(
-      `https://api.github.com/users/${username}/repos?page=${this.page}&per_page=5&client_id=35727918a7ec5a5c1dee&client_secret=d8b819c9e106f96dcbad98231b5609678e25d3d4`
+      `https://api.github.com/users/${username}/repos?page=${this.page}&per_page=5`
     )
       .then(res => {
         return res.json()
